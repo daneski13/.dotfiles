@@ -2,6 +2,7 @@
 nvim/.config/nvim/plugin/packer_compiled.lua
 personal.zsh
 .vscode/
+*.pid
 tmux/.tmux/plugins/*
 !tmux/.tmux/plugins/tpm
 lazy-lock.json

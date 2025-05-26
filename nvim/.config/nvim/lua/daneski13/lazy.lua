@@ -27,7 +27,7 @@ local plugins = {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.4",
+		tag = "0.1.8",
 		-- or                            , branch = '0.1.x',
 
 		dependencies = {
@@ -124,44 +124,34 @@ local plugins = {
 	},
 
 	-- LSP/Completion
+	{ "neovim/nvim-lspconfig" },
+	-- LSP Support
 	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
-		dependencies = {
-			-- LSP Support
-			{ "neovim/nvim-lspconfig" }, -- Required
-			{
-				-- Optional
-				"williamboman/mason.nvim",
-				build = function()
-					pcall(vim.cmd, "MasonUpdate")
-				end,
-			},
-			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
-
-			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-path" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-nvim-lua" },
-
-			-- Snippets
-			{ "L3MON4D3/LuaSnip" },
-			{ "rafamadriz/friendly-snippets" },
-
-			-- Github copilot
-			{ "zbirenbaum/copilot.lua" },
-
-			-- Formatting stuff
-			{ "jose-elias-alvarez/null-ls.nvim" },
-			{ "jay-babu/mason-null-ls.nvim" },
-
-			-- code actions lightbulb
-			{ "kosayoda/nvim-lightbulb" },
-		},
+		"mason-org/mason.nvim",
+		build = function()
+			pcall(vim.cmd, "MasonUpdate")
+		end,
 	},
+	{ "mason-org/mason-lspconfig.nvim" },
+	-- Autocompletion
+	{ "hrsh7th/nvim-cmp" },
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-path" },
+	{ "saadparwaiz1/cmp_luasnip" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-nvim-lua" },
+
+	-- Snippets
+	{ "L3MON4D3/LuaSnip" },
+	{ "rafamadriz/friendly-snippets" },
+
+	-- Github copilot
+	{ "zbirenbaum/copilot.lua" },
+	{ 'AndreM222/copilot-lualine' },
+
+	-- code actions lightbulb
+	{ "kosayoda/nvim-lightbulb" },
+
 	--  proper completion for neovim lua
 	{
 		"folke/lua-dev.nvim",

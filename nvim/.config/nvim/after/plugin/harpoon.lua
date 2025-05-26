@@ -27,7 +27,7 @@ vim.keymap.set("n", "<leader>t", function()
 end)
 
 -- Toggle between files using left hand Colemak home row + Alt/Opt
-vim.keymap.set("n", "†", function() ui.nav_file(1) end)
-vim.keymap.set("n", "ß", function() ui.nav_file(2) end)
-vim.keymap.set("n", "®", function() ui.nav_file(3) end)
+vim.keymap.set("n", "ƒ", function() ui.nav_file(1) end)
+vim.keymap.set("n", "∂", function() ui.nav_file(2) end)
+vim.keymap.set("n", "ß", function() ui.nav_file(3) end)
 vim.keymap.set("n", "å", function() ui.nav_file(4) end)

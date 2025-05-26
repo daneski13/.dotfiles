@@ -1,0 +1,36 @@
+[filter "lfs"]
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+[user]
+name = Dane Skalski
+email = daneski13@gmail.com
+signingkey = A9523490
+[init]
+defaultBranch = main
+[commit]
+gpgsign = true
+[gpg]
+program = gpg2
+[http]
+postBuffer = 157286400
+[core]
+editor = nvim
+pager = delta
+[pull]
+rebase = true
+[interactive]
+diffFilter = delta --color-only
+[delta]
+navigate = true
+light = false
+line-numbers = true
+true-color = auto
+syntax-theme = TwoDark
+[merge]
+conflictstyle = diff3
+[diff]
+colorMoved = default
+[push]
+	default = simple

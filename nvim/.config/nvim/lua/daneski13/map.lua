@@ -1,6 +1,6 @@
 local utils = require("daneski13.utils")
 
-COLEMAK = true
+COLEMAK = false
 if COLEMAK then
 	require("daneski13.colemak")
 end

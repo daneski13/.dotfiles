@@ -100,7 +100,6 @@ eval "$(thefuck --alias)"
 
 # alias to better programs
 alias vim='nvim'
-alias npm='pnpm'
 alias ls='eza -a --icons --group-directories-first'
 alias cat='bat'
 # silence you-should-use

@@ -58,35 +58,34 @@ vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
 -- "Find git" Only the files in git (respects .gitignore)
 vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
 
--- "Find Grep" grep/find files with input
+-- "Find Grep"
 vim.keymap.set('n', '<leader>fG', function()
-	builtin.grep_string({
+	builtin.live_grep({
 		-- search hidden files as well, but ignore .git
 		additional_args = function()
 			return { '--hidden' }
 		end,
-		search = vim.fn.input("Grep > ")
 	})
 end)
+
 -- "Find buffer Grep" files relative to the buffer
 vim.keymap.set('n', '<leader>fbG', function()
-	builtin.grep_string({
+	builtin.live_grep({
 		cwd = utils.buffer_dir(),
 		-- search hidden files as well, but ignore .git
 		additional_args = function()
 			return { '--hidden' }
 		end,
-		search = vim.fn.input("Grep > ")
 	})
 end)
+
 -- "Find project Grep" attempts to grep from the project root dir
 vim.keymap.set('n', '<leader>fpG', function()
-	builtin.grep_string({
+	builtin.live_grep({
 		cwd = rooter,
 		-- search hidden files as well, but ignore .git
 		additional_args = function()
 			return { '--hidden' }
 		end,
-		search = vim.fn.input("Grep > ")
 	})
 end)
