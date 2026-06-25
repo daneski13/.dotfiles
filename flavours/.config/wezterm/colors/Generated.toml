@@ -1,31 +1,31 @@
 [colors]
 ansi = [
-    '#162933',
-    '#a76760',
+    '#1b263a',
     '#3d7bbc',
-    '#5d7d8a',
-    '#5d6b6b',
-    '#4978c4',
-    '#2c8298',
-    '#c8cdbf',
+    '#697b87',
+    '#8ba6bc',
+    '#64676e',
+    '#6179a0',
+    '#657b8e',
+    '#d1c7bd',
 ]
-background = '162933'
+background = '1b263a'
 brights = [
-    '#818b87',
-    '#9f764e',
-    '#3a4a4f',
-    '#5d6b6b',
-    '#a4aca3',
-    '#d0d4c9',
-    '#31a9b5',
-    '#d8dcd2',
+    '#888789',
+    '#7b97b7',
+    '#404754',
+    '#64676e',
+    '#ada7a3',
+    '#d8cfc7',
+    '#687997',
+    '#dfd8d1',
 ]
-cursor_bg = '#c8cdbf'
-cursor_border = '#c8cdbf'
-cursor_fg = '#162933'
-foreground = '#c8cdbf'
-selection_bg = '#5d6b6b'
-selection_fg = '#c8cdbf'
+cursor_bg = '#d1c7bd'
+cursor_border = '#d1c7bd'
+cursor_fg = '#1b263a'
+foreground = '#d1c7bd'
+selection_bg = '#64676e'
+selection_fg = '#d1c7bd'
 
 [colors.indexed]
 

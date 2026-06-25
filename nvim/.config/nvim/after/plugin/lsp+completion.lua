@@ -78,41 +78,55 @@ local lspconfig = require("lspconfig")
 lspconfig.bashls.setup({
   filetypes = { "sh", "zsh" },
 })
+-- rust_analyzer
+lspconfig.rust_analyzer.setup({
+  capabilities = lsp_capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      procMacro = {
+        enable = false,
+        attributes = {
+          enable = false,
+        },
+      },
+    }
+  }
+})
+-- lua_ls
+lspconfig.lua_ls.setup({
+  capabilities = lsp_capabilities,
+  settings = {
+    Lua = {
+      format = {
+        enable = true,
+        defaultConfig = {
+          indent_style = "space",
+          indent_size = "2",
+        },
+      },
+      runtime = {
+        version = 'LuaJIT'
+      },
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        library = {
+          vim.env.VIMRUNTIME,
+        }
+      }
+    }
+  }
+})
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = { 'ts_ls', 'rust_analyzer' },
+  automatic_enable = true,
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({
         capabilities = lsp_capabilities,
-      })
-    end,
-    lua_ls = function()
-      lspconfig.lua_ls.setup({
-        capabilities = lsp_capabilities,
-        settings = {
-          Lua = {
-            format = {
-              enable = true,
-              defaultConfig = {
-                indent_style = "space",
-                indent_size = "2",
-              },
-            },
-            runtime = {
-              version = 'LuaJIT'
-            },
-            diagnostics = {
-              globals = { 'vim' },
-            },
-            workspace = {
-              library = {
-                vim.env.VIMRUNTIME,
-              }
-            }
-          }
-        }
       })
     end,
   }

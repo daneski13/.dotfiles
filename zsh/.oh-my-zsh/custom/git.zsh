@@ -45,6 +45,8 @@ alias gc="git commit"
 
 # Push
 alias gp="git push"
+# Push with tags
+alias gpt="git push && git push --tags"
 
 # Diff
 alias gd="git diff"
